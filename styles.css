@@ -19,7 +19,6 @@ h1,h2,h3,h4,h5 {
 
 
 .card {
-
     --start: red;
     --end: cyan;
     height: 500px;
@@ -29,4 +28,12 @@ h1,h2,h3,h4,h5 {
     border-radius: 25px;
     margin-top: 15px;
     background-image: linear-gradient(var(--start), var(--end));
+
+    position: relative;
+    .content {
+        position: absolute;
+        inset: 1px;
+        border-radius: inherit;
+        background: rgba(41, 38, 38, 0.863);
+    }
 }
