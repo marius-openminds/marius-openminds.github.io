@@ -7,7 +7,7 @@ addEventListener("DOMContentLoaded", () => {
 
 
     const colors = ["gold","#fff", "dodgerblue","#0f12d2", "rebeccapurple", "red","tomato", "purple"];
-    const interval = 500;
+    const interval = 650;
 
     let currentStart = 0;
     let currentMiddle = colors.length-2;
