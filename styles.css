@@ -20,14 +20,17 @@ h1,h2,h3,h4,h5 {
 
 .card {
     --start: red;
+    --middle: gold;
     --end: cyan;
+    --tilt: 45deg;
+    
     height: 500px;
     width: 350px;
 
     outline: 1px solid limegreen;
     border-radius: 25px;
     margin-top: 15px;
-    background-image: linear-gradient(var(--start), var(--end));
+    background-image: linear-gradient(var(--tilt), var(--start),var(--middle), var(--end));
 
     position: relative;
     .content {
