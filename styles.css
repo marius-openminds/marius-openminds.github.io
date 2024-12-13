@@ -37,12 +37,12 @@ h1,h2,h3,h4,h5 {
     .content {
         --s1: 25px;
         --s2: 5px;
-        --opacity: 0.24;
+        --opacity: 0.44;
         position: absolute;
         height: 200%;
         inset: 1px;
         border-radius: inherit;
-        background-image: linear-gradient(lime var(--s1), black var(--s2));
+        background-image: linear-gradient(rgb(8, 82, 8) var(--s1), black var(--s2));
         background-size: 100% calc(var(--s1) + var(--s2));
         background-repeat: repeat;
         opacity: var(--opacity);
