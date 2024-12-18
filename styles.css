@@ -6,7 +6,11 @@ body {
     justify-content: center;
 }
 
-h1,h2,h3,h4,h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
     text-align: center;
     margin-bottom: 0;
 }
@@ -17,27 +21,34 @@ h1,h2,h3,h4,h5 {
     justify-content: center;
 }
 
+@property --rotation {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 45deg;
+}
+
+
 
 .card {
     --start: red;
     --middle: gold;
     --end: cyan;
-    --tilt: 45deg;
-    
+
     height: 500px;
     width: 350px;
 
     outline: 1px solid limegreen;
     border-radius: 25px;
     margin-top: 15px;
-    background-image: linear-gradient(var(--tilt), var(--start),var(--middle), var(--end));
+    background-image: linear-gradient(var(--rotation), var(--start), var(--middle), var(--end));
     /* background-size: 35px 35px; */
     position: relative;
     overflow: hidden;
+
     .content {
         --s1: 25px;
         --s2: 5px;
-        --opacity: 0.44;
+        --opacity: 0.34;
         position: absolute;
         height: 200%;
         inset: 1px;
@@ -46,13 +57,14 @@ h1,h2,h3,h4,h5 {
         background-size: 100% calc(var(--s1) + var(--s2));
         background-repeat: repeat;
         opacity: var(--opacity);
-        animation: rolldown 3s linear infinite;  
-        
+        animation: rolldown 3s linear infinite;
     }
 }
+
 
 @keyframes rolldown {
     to {
         transform: translateY(-50%);
+        --rotation: 360deg;
     }
 }
