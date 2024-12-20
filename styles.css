@@ -30,18 +30,27 @@ h5 {
 
 
 .card {
-    --start: red;
-    --middle: gold;
-    --end: cyan;
+   
+    --hueoffset: 25; 
+    --c1: hsl(calc(00 + var(--hueoffset)), 80%, 50%);
+    --c2: hsl(calc(30 + var(--hueoffset)), 70%, 50%);
+    --c3: hsl(calc(60 + var(--hueoffset)), 100%, 56%);
+    --c3: hsl(calc(90 + var(--hueoffset)), 61%, 50%);
+    --c4: hsl(calc(120 + var(--hueoffset)), 61%, 50%);
+    --c5: hsl(calc(150 + var(--hueoffset)), 61%, 50%);
+    --c6: hsl(calc(180 + var(--hueoffset)), 61%, 50%);
     --rotation: 90deg;
+    --background: linear-gradient(var(--rotation), var(--c1), var(--c2), var(--c3), var(--c4), var(--c5), var(--c6));
+
 
     height: 500px;
     width: 350px;
 
-    outline: 1px solid limegreen;
+
+    outline: 1px solid hsl(120, 61%, 50%);
     border-radius: 25px;
     margin-top: 15px;
-    background-image: linear-gradient(var(--rotation), var(--start), var(--middle), var(--end));
+    background-image: var(--background);
     /* background-size: 35px 35px; */
     position: relative;
     overflow: hidden;
@@ -66,6 +75,5 @@ h5 {
 @keyframes rolldown {
     to {
         transform: translateY(-50%);
-        --rotation: 360deg;
     }
 }
