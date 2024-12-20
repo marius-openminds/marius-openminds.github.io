@@ -7,12 +7,23 @@ addEventListener("DOMContentLoaded", () => {
 
 
     const colors = ["gold","#fff", "dodgerblue","#0f12d2", "rebeccapurple", "red","tomato", "purple"];
-    const interval = 780;
+    const colorInterval = 780;
+    const rotationInterval = 20;
 
     let currentStart = 0;
     let currentMiddle = colors.length-2;
     let currentEnd = colors.length / 2;
 
+
+    let angle = 45;
+
+    rotate();
+
+    function rotate(){
+        angle = (angle + 1) % 360;
+        card.style.setProperty("--rotation", `${angle}deg`)
+        requestAnimationFrame(rotate)
+    }
 
     setInterval(
         () => { 
@@ -20,7 +31,7 @@ addEventListener("DOMContentLoaded", () => {
             card.style.setProperty("--middle", colors[currentMiddle++ % colors.length]) 
             card.style.setProperty("--end", colors[currentEnd++ % colors.length]) 
         },
-        interval);
+        colorInterval);
 })
 
 

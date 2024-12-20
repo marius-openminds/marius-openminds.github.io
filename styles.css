@@ -33,6 +33,7 @@ h5 {
     --start: red;
     --middle: gold;
     --end: cyan;
+    --rotation: 90deg;
 
     height: 500px;
     width: 350px;
